@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Triple A Boutique</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 <body>
   <header>
@@ -23,7 +25,7 @@
   <section class="hero">
     <div class="hero-text">
       <h1 id="hero-title"></h1>
-      <p>Discover fashion that speaks to you.</p>
+      <p class="tagline">Discover fashion that speaks to you.</p>
       <a href="#" class="cta">Shop Now</a>
     </div>
   </section>
@@ -42,6 +44,50 @@
       <p>Not loving it? Return it easily, no stress.</p>
     </div>
   </section>
+<section class="catalog">
+  <h2>Shop Our Collection</h2>
+  <div class="catalog-grid"></div>
+</section>
+
+<section class="categories">
+  <h2>Browse Items by Category</h2>
+  <div class="category-buttons">
+    <button onclick="filterCategory('bags')">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <p>Bags</p>
+    </button>
+    <button onclick="filterCategory('wallets')">
+     <i class="fa-solid fa-wallet"></i>
+     <p>Wallets</p> 
+    </button>
+    <button onclick="filterCategory('caps')">
+      <i class="fa-solid fa-hat-cowboy"></i>
+      <p>Caps</p>
+    </button>
+    <button onclick="filterCategory('perfumes')">
+      <i class="fa-solid fa-bottle-droplet"></i>
+      <p>Perfumes</p>
+    </button>
+    <button onclick="filterCategory('accessories')">
+      <i class="fa-solid fa-glasses"></i>
+      <p>Accessories</p>
+    </button>
+    <button onclick="filterCategory('watches')">
+      <i class="fa-solid fa-swatchbook"></i>
+      <p>Watches</p>
+    </button>
+    <button onclick="filterCategory('clothes')">
+      <i class="fa-solid fa-shirt"></i>
+      <p>Clothes</p>
+    </button>
+    <button onclick="filterCategory('others')">
+      <i class="fa-solid fa-bars"></i>
+      <p>Others</p>
+    </button>
+  </div>
+</section>
+
+
 
   <footer>
     <p>&copy; 2025 Triple A Boutique. All rights reserved.</p>
