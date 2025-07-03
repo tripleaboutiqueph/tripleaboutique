@@ -42,7 +42,7 @@ for (let i = 1; i <= 24; i++) {
   const item = document.createElement("div");
   item.className = "item";
   item.innerHTML = `
-    <img src="img/product${i}.png" alt="${productNames[i - 1]}" />
+    <img src="IMG/product${i}.png" alt="${productNames[i - 1]}" />
     <p class="desc">${productNames[i - 1]}</p>
     <p class="price">$${productPrices[i - 1].toFixed(2)}</p>
   `;
