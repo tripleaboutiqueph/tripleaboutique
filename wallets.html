@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Triple A Boutique | Wallet Carousel</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fce4ec;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      background-color: #d48ab2;
+      color: #fff;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 300px;
+      margin-right: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(139, 90, 43, 0.15);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .carousel-item h3 {
+      margin-top: 15px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .price {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #ff4c60;
+    }
+
+    .buy-link {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background-color: #ff4c60;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+    .buy-link:hover {
+      background-color: #e64454;
+    }
+
+    .carousel-controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .carousel-controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #d48ab2;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #d48ab2;
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Triple A Boutique</h1>
+  </header>
+
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack"></div>
+    <div class="carousel-controls">
+      <button onclick="moveCarousel(-1)">← Prev</button>
+      <button onclick="moveCarousel(1)">Next →</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Triple A Boutique. Stylish. Smart. Spade.
+  </footer>
+
+  <script>
+    const carouselTrack = document.getElementById("carouselTrack");
+    let currentIndex = 0;
+
+    const productNames = [
+      "Slim Zip Wallet", "Classic Fold Wallet", "Mini Clutch", "Rose Leather Wallet", "Saffiano Card Case",
+      "Velvet Snap Wallet", "Tri-Fold Organizer", "Gold Accent Wallet", "Compact Travel Wallet", "Textured Flap Wallet",
+      "Monogram Zip", "Cherry Blossom Wallet", "Envelope Style", "Double-Snap Purse", "Vintage Kisslock",
+      "Pastel Pebbled Wallet", "Mini Wristlet", "Studded Wallet", "Glossy ID Holder", "Soft Leather Zip",
+      "Tassel Charm Wallet", "Checkered Fold", "Chain Strap Wallet", "Lilac Organizer", "Magnetic Slim Case",
+      "Textile Clutch", "Paisley Print Wallet", "Neon Accent Fold", "Elegant Zip Sleeve", "Everyday Essentials"
+    ];
+
+    const productPrices = Array.from({ length: 30 }, () =>
+      (Math.random() * 1500 + 500).toFixed(2)
+    );
+
+    for (let i = 0; i < 30; i++) {
+      const item = document.createElement("div");
+      item.className = "carousel-item";
+      item.innerHTML = `
+        <img src="img/wallet${i + 1}.png" alt="${productNames[i]}" />
+        <h3>${productNames[i]}</h3>
+        <div class="price">₱${productPrices[i]}</div>
+        <a href="https://m.me/TripleABoutiquePH" target="_blank" class="buy-link">Buy Now</a>
+      `;
+      carouselTrack.appendChild(item);
+    }
+
+function moveCarousel(direction) {
+  const itemWidth = document.querySelector(".carousel-item").offsetWidth + 30;
+  currentIndex += direction;
+
+  const maxIndex = productNames.length - 3;
+  if (currentIndex > maxIndex) {
+    currentIndex = 0; // loop back to beginning
+  }
+  if (currentIndex < 0) {
+    currentIndex = maxIndex; // loop to the end
+  }
+
+  carouselTrack.style.transform = `translateX(-${itemWidth * currentIndex}px)`;
+}
+
+  </script>
+
+</body>
+</html>

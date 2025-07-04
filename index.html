@@ -6,6 +6,9 @@
   <title>Triple A Boutique</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bentham&family=DM+Serif+Text:ital@0;1&family=Fascinate+Inline&family=Fjalla+One&family=Knewave&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -13,7 +16,7 @@
     <div class="logo">Triple A Boutique</div>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="#">New Arrivals</a></li>
         <li><a href="#">Contact</a></li>
@@ -22,13 +25,36 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
+<section class="promo-grid">
+  <!-- Left Hero Banner -->
+  <div class="promo-left">
+    <img src="img/logo/store.png" alt="Hero Image" />
+    <div class="promo-text">
+      <h2>Fashion That Speaks to You</h2>
       <h1 id="hero-title"></h1>
-      <p class="tagline">Discover fashion that speaks to you.</p>
+      <p class="tagline">Your look. Your story. All in one place.</p>
       <a href="#" class="cta">Shop Now</a>
     </div>
-  </section>
+  </div>
+
+  <!-- Top Right Promo -->
+  <div class="promo-right top">
+    <div class="label">
+      <h3><span>Delivery Modes</span><br />See options for Delivery (LBC, J&T, Lalamove, Etc)</h3>
+      <a href="#">Check Mode of Delivery →</a>
+    </div>
+    <img src="img/delivery.png" alt="Fruits" />
+  </div>
+
+  <!-- Bottom Right Promo -->
+  <div class="promo-right bottom">
+    <div class="label">
+      <h3><span>Mode of Payment</span><br />Bank Transfer, GCASH, E-wallets</h3>
+      <a href="#">See Payment Methods →</a>
+    </div>
+    <img src="img/payment.png" alt="Bread" />
+  </div>
+</section>
 
   <section class="features">
     <div class="feature-item">
@@ -44,6 +70,24 @@
       <p>Not loving it? Return it easily, no stress.</p>
     </div>
   </section>
+<section class="logo-carousel">
+  <div class="carousel-track">
+    <img src="img/logo/logo1.png" />
+    <img src="img/logo/logo2.png" />
+    <img src="img/logo/logo3.png" />
+    <img src="img/logo/logo4.png" />
+    <img src="img/logo/logo5.png" />
+    <img src="img/logo/logo6.png" />
+    <img src="img/logo/logo7.png" />
+    <img src="img/logo/logo8.png" />
+    <img src="img/logo/logo9.png" />
+    <img src="img/logo/logo11.png" />
+    <img src="img/logo/logo12.png" />
+
+  </div>
+</section>
+
+
 <section class="catalog">
   <h2>Shop Our Collection</h2>
   <div class="catalog-grid"></div>
